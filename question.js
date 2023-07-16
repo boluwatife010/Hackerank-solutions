@@ -96,3 +96,26 @@ aPreciseFunction([1,2,-1,-2,0]);
 //     newValue = 
 //     console.log();
 // }
+/*
+ const {positive, negative, zero} = 
+        arr.reduce((acc, val) => {
+            if (val > 0) {
+                acc.positive += 1;
+            }
+            if (val === 0) {
+                acc.zero += 1;
+            }
+            if (val < 0) {
+                acc.negative += 1;
+            }
+            return acc;
+        }, { 
+            positive: 0, 
+            negative: 0, 
+            zero: 0 
+        });
+
+    console.log(positive / arr.length);
+    console.log(negative / arr.length);
+    console.log(zero / arr.length);
+*/
