@@ -1,10 +1,8 @@
-function aVeryBigSum(ar){
-    ar = [56, 20, 11];
-    let sum = 0;
-    for(let i = 0; i < ar.length; i++){
-    sum += ar[i];
+function aVeryBigSum(ar) {
+    var sum = 0;
+    for (var i = 0; i < ar.length; i++) {
+        sum += ar[i];
     }
     return sum;
-    }
-    let summation = aVeryBigSum();
-    console.log(summation);
+}
+console.log(aVeryBigSum([2, 3, 4, 5, 6]));
