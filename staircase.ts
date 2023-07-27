@@ -1,5 +1,5 @@
 function staircase( n: number) {
-    let hash: string= '#';
+    let hash= '#';
     let space = ' ';
     for(let i = 1; i <= n; i++) {
         let spacep = space.repeat(n - i);
