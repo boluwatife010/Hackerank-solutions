@@ -1,21 +1,29 @@
-function timeConversion(string) {
-    let hours, minutes, second, period;
-    hours = parseInt(string.slice(0, 2)) ;
-    period = string.slice(8, 10); 
-    minutes = string.slice(2, 5);
-    second = string.slice(5,8);
-    if (hours < 12 && period === 'PM') {
-        hours += 12;
-    }
-    else if (hours === 12 && period == 'AM') {
-        hours = 0;
-    }
-    else if (hours === 12 && period == 'PM') {
-      hours = 12;
-    }
-    return `${hours}${minutes}${second}`;
+function timeConversion(s) {
+    let time = s.slice(0, 8).split(':');
+    time[0] = (s.indexOf('PM') > -1) ?
+        (time[0] == 12 ? '12' : Number(time[0]) + 12) :
+        (time[0] == 12 ? '00' : time[0]);
+    return time.join(':');
 }
-console.log(timeConversion('12:40:22AM'));
+
+// function timeConversion(string) {
+//     let hours, minutes, second, period;
+//     hours = parseInt(string.slice(0, 2)) ;
+//     period = string.slice(8, 10); 
+//     minutes = string.slice(2, 5);
+//     second = string.slice(5,8);
+//     if (hours < 12 && period === 'PM') {
+//         hours += 12;
+//     }
+//     else if (hours === 12 && period == 'AM') {
+//         hours = 0;
+//     }
+//     else if (hours === 12 && period == 'PM') {
+//       hours = 12;
+//     }
+//     return `${hours}${minutes}${second}`;
+// }
+// console.log(timeConversion('12:40:22AM'));
 /*
  let [time, part] = [s.substring(0, s.length - 2), s.substring(s.length - 2)]
   time = time.split(":").map(Number)
